@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>PolicyLens AI: AI policy gap checker</title>
+    <meta name="description" content="Check a privacy policy against GDPR requirements and see exactly where the gaps are." />
+    <meta id="theme-color-meta" name="theme-color" content="#0c0a1d" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Set the theme before first paint to avoid a flash.
+      (function () {
+        try {
+          var t = localStorage.getItem("pl-theme");
+          if (t !== "light" && t !== "dark") {
+            t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+          }
+          document.documentElement.dataset.theme = t;
+          document.getElementById("theme-color-meta").setAttribute("content", t === "light" ? "#f5f4fd" : "#0c0a1d");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>PolicyLens AI needs JavaScript to run.</noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
